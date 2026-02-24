@@ -3,33 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Frost</title>
+  <title>Box Shadow</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="frost-page">
-  <div class="frost-card" id="frostCard" role="button" tabindex="0" aria-pressed="false">
-    <div class="frost-card__inner"></div>
+<body class="box-page">
+  <div class="box-shape" tabindex="0" aria-label="Box shadow demo">
+    <div class="box-shape__glow"></div>
   </div>
 
   <a href="index.html" class="home" aria-label="Home"></a>
-
-  <script>
-    const card = document.getElementById('frostCard');
-
-    function toggleArmed() {
-      const next = !card.classList.contains('armed');
-      card.classList.toggle('armed', next);
-      card.setAttribute('aria-pressed', String(next));
-    }
-
-    card.addEventListener('click', toggleArmed);
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleArmed();
-      }
-    });
-  </script>
 </body>
 </html>

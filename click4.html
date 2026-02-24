@@ -8,26 +8,8 @@
 </head>
 
 <body class="blur-page">
-  <div class="blur-shape" id="blurShape" role="button" tabindex="0" aria-pressed="false"></div>
+  <div class="blur-shape"></div>
 
   <a href="index.html" class="home" aria-label="Home"></a>
-
-  <script>
-    const el = document.getElementById('blurShape');
-
-    function toggleArmed() {
-      const next = !el.classList.contains('armed');
-      el.classList.toggle('armed', next);
-      el.setAttribute('aria-pressed', String(next));
-    }
-
-    el.addEventListener('click', toggleArmed);
-    el.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleArmed();
-      }
-    });
-  </script>
 </body>
 </html>
