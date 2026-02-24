@@ -1,0 +1,378 @@
+/* RESET */
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: color2 4s infinite alternate;
+    font-family: "Helvetica";
+  }
+  
+  /* background animation */
+  @keyframes color2 {
+    0% { background-color: teal; }
+    50% { background-color: turquoise; }
+    100% { background-color: teal; }
+  }
+  
+  /* menu container */
+  .menu {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* links styled as buttons */
+  .menu a {
+    background-color: aqua;
+    font-size: 40px;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    transition: transform 0.5s;
+  }
+  
+  /* hover animation */
+  .menu a:hover {
+    animation: color 1s infinite alternate;
+    transform: scale(1.1);
+  }
+  
+  /* button hover animation */
+  @keyframes color {
+    from { background-color: aqua; }
+    to { background-color:white; }
+  }
+  
+
+/* page setup */
+.circles {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+  }
+  
+  /* circle */
+  .c {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    animation: move 6s infinite alternate;
+  }
+  
+  /* placement */
+  .c:nth-child(1) {
+    top: 30%;
+    left: 20%;
+  }
+  
+  .c:nth-child(2) {
+    top: 60%;
+    left: 60%;
+    animation-duration: 8s;
+  }
+  
+  /* animation */
+  @keyframes move {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(150px);
+    }
+  }
+
+  .square-page {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* the square */
+  .square {
+    width: 250px;
+    height: 250px;
+    background: white;
+    border-radius: 100px;
+    transition: border-radius 0.6s ease;
+  }
+  
+  /* hover effect */
+  .square:hover {
+    border-radius: 0px;
+  }
+  
+  .bend-page {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* bending shape */
+  .bend {
+    width: 300px;
+    height: 80px;
+    background: white;
+    border-radius: 40px;
+    animation: bend 3s infinite alternate ease-in-out;
+  }
+  
+  /* bend animation */
+  @keyframes bend {
+    from {
+      transform: skewX(0deg);
+    }
+    to {
+      transform: skewX(20deg);
+    }
+  }
+  
+  /* home button base */
+.home {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: home-float 3s infinite alternate ease-in-out;
+  }
+  
+  /* subtle motion */
+  @keyframes home-float {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
+
+  .blur-page {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #07080c;
+    display: grid;
+    place-items: center;
+  }
+
+  .blur-shape {
+    width: min(420px, 70vw);
+    aspect-ratio: 1 / 1;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.15));
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.12);
+    filter: blur(10px);
+    transform: scale(1);
+    transition: filter 450ms ease, transform 450ms ease, box-shadow 450ms ease;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .blur-shape:hover {
+    transform: scale(1.02);
+  }
+
+  /* click arms hover-blur interaction */
+  .blur-shape.armed {
+    filter: blur(0px);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.18);
+  }
+
+  .blur-shape.armed:hover {
+    filter: blur(14px);
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.26);
+  }
+
+  .blur-shape:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.55), 0 0 80px rgba(255, 255, 255, 0.18);
+  }
+
+  .frost-page {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 20% 20%, #2bfff2 0%, transparent 35%),
+      radial-gradient(circle at 80% 70%, #7a2bff 0%, transparent 38%),
+      #05060a;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .frost-card {
+    width: min(520px, 80vw);
+    height: min(320px, 55vh);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    transition: backdrop-filter 450ms ease, -webkit-backdrop-filter 450ms ease, transform 450ms ease, box-shadow 450ms ease;
+    cursor: pointer;
+    outline: none;
+    display: grid;
+    place-items: center;
+  }
+
+  .frost-card__inner {
+    width: 70%;
+    height: 35%;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    filter: blur(8px);
+    transition: filter 450ms ease, transform 450ms ease;
+  }
+
+  .frost-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* click arms hover-blur interaction */
+  .frost-card.armed .frost-card__inner {
+    filter: blur(0px);
+    transform: scale(1.03);
+  }
+
+  .frost-card.armed:hover {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 40px 110px rgba(0, 0, 0, 0.7);
+  }
+
+  .frost-card.armed:hover .frost-card__inner {
+    filter: blur(12px);
+    transform: scale(1.08);
+  }
+
+  .frost-card:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.55), 0 30px 80px rgba(0, 0, 0, 0.55);
+  }
+  
+
+/* a {
+  color: black;
+}
+a:hover {
+  background-color: black;
+  color: white;
+}
+a:active {
+  background-color: black;
+  color: red;
+}
+a:visited {
+  color: gray;
+} */
+/* .index{
+
+@keyframes color {
+    from {background-color: blueviolet;}
+    to{background-color: rgb(255, 44, 255);}
+}
+
+body{
+    background-color: chartreuse;
+    animation-name: color2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+} */
+
+/* @keyframes color2 {
+    0% {background-color: chartreuse;}
+    70%{background-color: cornflowerblue;}
+    100%{background-color: chartreuse;}
+}
+
+
+  button {
+    background-color: aqua;
+    transition-duration: 500ms;
+    font-size: 50px; */
+    /* transform: rotate(0deg); */
+    /* position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 300px; */
+    /* transform: translate(0px,0px); */
+    /* transform: scale(1,1);
+    animation-iteration-count:infinite; */
+    /* border-radius: 0px; */
+  /* }
+
+
+  
+button:hover {
+    animation-name: color;
+    animation-duration: 1s; */
+/* button:active{ */
+    /* background-color: blue;
+    border-radius: 20px; */
+    /* transform: rotate(25deg); */
+    /* transform: translate(50px,100px); */
+    /* transform: scale(2,3); */
+/* }
+}
+
+
+.click1{
+    color: aqua;
+} */
+
+/* link styles (optional) */
+/* .index 
+{
+    color: black;
+    text-decoration: none;
+  } */
+  
+  /* background animation */
+  /* @keyframes color2 {
+    0% { background-color: teal; }
+    50% { background-color: turquoise; }
+    100% { background-color: teal; }
+  }
+  
+  body {
+    background-color: chartreuse;
+    animation: color2 2s infinite;
+  } */
+  
+  /* button hover animation */
+  /* @keyframes color {
+    from { background-color: blueviolet; }
+    to { background-color: rgb(255, 44, 255); }
+  }
+  
+  button {
+    background-color: aqua;
+    font-size: 50px;
+    width: 300px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+  }
+  
+  button:hover {
+    animation: color 1s infinite;
+  } */
+  

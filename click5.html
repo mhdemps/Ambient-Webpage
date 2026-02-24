@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frost</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="frost-page">
+  <div class="frost-card" id="frostCard" role="button" tabindex="0" aria-pressed="false">
+    <div class="frost-card__inner"></div>
+  </div>
+
+  <a href="index.html" class="home" aria-label="Home"></a>
+
+  <script>
+    const card = document.getElementById('frostCard');
+
+    function toggleArmed() {
+      const next = !card.classList.contains('armed');
+      card.classList.toggle('armed', next);
+      card.setAttribute('aria-pressed', String(next));
+    }
+
+    card.addEventListener('click', toggleArmed);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleArmed();
+      }
+    });
+  </script>
+</body>
+</html>
