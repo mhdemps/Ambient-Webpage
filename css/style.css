@@ -225,15 +225,6 @@ body {
     place-items: center;
   }
 
-  .box-shape__glow {
-    width: 70%;
-    height: 35%;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.55);
-    filter: blur(8px);
-    transition: filter 450ms ease, transform 450ms ease;
-  }
-
   .box-shape:hover {
     transform: translateY(-2px);
   }
